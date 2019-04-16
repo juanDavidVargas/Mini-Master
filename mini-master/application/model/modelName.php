@@ -32,8 +32,7 @@
         try {
           $stm = $this->db->prepare($sql);
           $stm->bindParam(1, $this->atributte);
-          $stm->execute();
-          return $stm->fetchAll(PDO::FETCH_ASSOC);
+          $result = $stm->execute();
           return $result;
         } catch (PDOException $e) {
           echo $e->getMessage();
